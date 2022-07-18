@@ -1,0 +1,323 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+button, input {
+    outline: none;
+	cursor: pointer;
+	font-size: inherit;
+	background-color: inherit;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+div.page_block {
+    width: 100%;
+    float: left;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.shadow_btn {
+    background-color: inherit;
+    border-radius: 0;
+    border: 1px solid black;
+    transition: all 0.3s;
+}
+
+.shadow_btn:hover {
+    background-color: #a9dbd4;
+    box-shadow: -3px 3px 0 0 #a9dbc2, inset -2px 2px 0 0 white;
+}
+
+form {
+    margin: 0;
+}
+
+
+/* HEADER */
+
+
+div#citation_container {
+    height: 40vh;
+    background: url("/static/backgrounds/bg1.jpg") no-repeat center center fixed;
+    transition: all 0.3s;
+}
+
+div#citation_container.collapsed {
+    height: 15vh;
+}
+
+div.faded_container {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+}
+
+p.citation {
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+    color: white;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    margin: 0;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+
+/* CONTENT */
+
+
+div.content_container {
+    max-width: 60em;
+    margin: 0 auto;
+}
+
+/* Guest form */
+div#guest_reg_form {
+    height: 52vh;
+    width: 100%;
+    text-align: center;
+}
+
+div#guest_reg_form>form {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+div.form_row {
+    margin-bottom: 1vh;
+}
+
+input.large_code {
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: large;
+}
+
+input.large_code::placeholder {
+    color: rgb(150, 150, 150);
+}
+
+input#send_guest_code {
+    font-size: large;
+}
+
+button#send_guest_code {
+    font-size: large;
+    width: 20vh;
+}
+
+/* Guest info & messages */
+
+
+div#show_menu_btn {
+    display: none;
+    float: left;
+    height: 100%;
+    width: 5em;
+}
+
+
+button#show_menu {
+    width: 2em;
+    height: 2em;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 2em;
+    border: none;
+    background: url("/static/icons/menu.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+
+
+button#hide_menu {
+    display: none;
+    width: 1.5em;
+    height: 1.5em;
+    margin-top: 1.5em;
+    float: left;
+    border: none;
+    background: url("/static/icons/close.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+
+
+div#guest_info {
+    float: left;
+    height: 100%;
+    width: 20em;
+    padding-left: 2em;
+    box-sizing: border-box;
+}
+
+div#guest_name {
+    margin: 1em 0;
+    font-size: larger;
+    font-weight: bold;
+    float: left;
+}
+
+div.guest_status_toggle {
+    width: 100%;
+    float: left;
+}
+
+p.guest_status_label {
+    margin: 0 0 1em 0;
+}
+
+p#guest_first_name, p#guest_last_name {
+    margin: 0;
+}
+
+.status_btn {
+    background-color: #a9dbd4;
+    height: 1.6em;
+    border-radius: 0.8em;
+    border: none;
+    transition: all 0.3s;
+}
+
+button#guest_status_btn {
+    width: 10em;
+}
+
+button#have_car_btn {
+    width: 4em;
+}
+
+.status_btn.positive {
+    background-color: rgb(171, 238, 150);
+}
+
+.status_btn.negative {
+    background-color: rgb(255, 192, 155);
+}
+
+.equip_count_form {
+    display: inline-block;
+    width: 5em;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.set_equip_count_btn {
+    background-size: 80%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 1em;
+    border: none;
+    border-radius: 1.5vh;
+    padding: 0;
+}
+
+.decrease_equip_btn {
+    background-image: url('/static/icons/prev.png');
+    float: left;
+    margin-left: 0.5em;
+}
+
+.increase_equip_btn {
+    background-image: url('/static/icons/next.png');
+    float: right;
+    margin-right: 0.5em;
+}
+
+div#send_guest_status {
+    width: 100%;
+    float: left;
+    margin: 1em 0;
+}
+
+button#send_guest_status {
+    height: 1.8em;
+}
+
+div#guest_messages {
+    float: left;
+    height: 100%;
+    width: calc(100% - 20em);
+}
+
+div.message {
+    border: 1px solid black;
+    padding: 0 2em;
+    margin: 2em 2em 0 2em;
+}
+
+
+@media screen and (max-width: 1000px) {
+    div#show_menu_btn {
+        display: block;
+    }
+
+    div#guest_info {
+        position: absolute;
+        left: 0;
+        transform: translate(-100%, 0);
+        background-color: white;
+        z-index: 100;
+        border-right: 1px solid black;
+        transition: all 0.3s;
+    }
+
+    div#guest_info.shown {
+        transform: translate(0, 0);
+    }
+
+    div#guest_name {
+        float: left;
+        width: calc(100% - 3em);
+    }
+
+    button#hide_menu {
+        display: block;
+    }
+
+    div#guest_messages {
+        width: calc(100% - 5em);
+        float: left;
+    }
+
+    div.message {
+        box-sizing: border-box;
+    }
+}
+
+
+/* FOOTER */
+
+
+div.footer_container {
+    height: 8vh;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 0;
+    background-color: white;
+}
+
+p.project_label {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
